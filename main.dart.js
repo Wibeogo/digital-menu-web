@@ -49398,7 +49398,7 @@ if(p.c!=null)p.X(new A.aDS(p,o))
 case 1:return A.q(q,r)}})
 return A.r($async$AK,r)},
 gI7(){var s=$.h8().a,r=s==null?null:s.a.c.a.a
-return"https://wibeogo.github.io/digital_menu_app/#/menu/"+(r==null?"":r)},
+return"https://digital-menu-web-rho.vercel.app/#/menu/"+(r==null?"":r)},
 zG(){var s=0,r=A.t(t.H),q=this
 var $async$zG=A.o(function(a,b){if(a===1)return A.p(b,r)
 while(true)switch(s){case 0:s=2
