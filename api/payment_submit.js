@@ -24,10 +24,22 @@ export default async function handler(req, res) {
       })
     });
 
-    const data = await response.json();
+    const textResponse = await response.text();
+    let data;
+    try {
+      data = JSON.parse(textResponse);
+    } catch(e) {
+      data = { message: `Erreur inattendue au format: ${textResponse.substring(0, 50)}` };
+    }
+
+    // Récupérer le message d'erreur si la syntaxe Senfenico est différente
+    if (!data.status && !data.message) {
+       data.message = JSON.stringify(data);
+    }
+    
     res.status(response.status).json(data);
     
   } catch (error) {
-    res.status(500).json({ status: false, message: 'Erreur réseau interne', error: String(error) });
+    res.status(500).json({ status: false, message: `Erreur réseau: ${String(error)}` });
   }
 }
