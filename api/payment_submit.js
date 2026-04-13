@@ -22,6 +22,8 @@ module.exports = async (req, res) => {
     });
 
     const text = await response.text();
+    console.log(`[SENFENICO SUBMIT] Réponse Status: ${response.status}`);
+    
     let data;
     try { data = JSON.parse(text); } catch (e) { data = { message: text }; }
 
